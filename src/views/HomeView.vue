@@ -1,18 +1,20 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <MapView/>
 </template>
 
 <script lang="ts">
+import { usePlacesModule } from '@/composables';
 import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import MapView from '@/components/mapView/MapView.vue';
 
 export default defineComponent({
   name: 'HomeView',
-  components: {
-    HelloWorld,
+  components:{
+    MapView
   },
+  setup(){
+    usePlacesModule()
+  }
 });
 </script>
+ 
